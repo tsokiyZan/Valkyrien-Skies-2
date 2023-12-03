@@ -30,7 +30,7 @@ public class MixinSodiumWorldRenderer {
     @Shadow
     private ClientLevel world;
 
-    @Redirect(method = "renderTileEntities", at = @At(value = "INVOKE",
+    @Redirect(method = "renderBlockEntities", at = @At(value = "INVOKE",
         target = "Lnet/minecraft/client/renderer/blockentity/BlockEntityRenderDispatcher;render(Lnet/minecraft/world/level/block/entity/BlockEntity;FLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;)V"))
     private void renderShipChunkBlockEntity(final BlockEntityRenderDispatcher instance, final BlockEntity blockEntity,
         final float partialTicks, final PoseStack matrixStack, final MultiBufferSource buffer, final PoseStack matrices,
